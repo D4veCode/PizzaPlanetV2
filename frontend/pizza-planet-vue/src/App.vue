@@ -1,13 +1,19 @@
 <template>
-  <div id="app">
-    <div id="nav">
+  <div id="page-container">
+    <!---<div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <router-view/>-->
   </div>
 </template>
-
+<script>
+export default {
+  data: () => ({
+    menuVisible: false,
+  }),
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -28,5 +34,17 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.md-drawer {
+    width: 230px;
+    max-width: calc(100vw - 125px);
+}
+.md-app-toolbar {
+    height: 196px;
+}
+.md-app {
+    max-height: 400px;
+    border: 1px solid rgba(#000, .12);
 }
 </style>
