@@ -1,20 +1,28 @@
 <template>
-  <div>
-      <Header>
-      </Header>
-      <md-app-content>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae non explicabo, neque.</p>
-      </md-app-content>
-  </div>
+<v-container>
+  <v-card>
+    <v-card-title>
+      <h2>Las mejores pizzas en Pizza Planet</h2>
+    </v-card-title>
+    <v-card-text>
+      Realiza tu pedido
+    </v-card-text>
+    <v-card-action>
+      <br>
+      <v-btn
+      >
+        +
+      </v-btn>
+    </v-card-action>
+  </v-card>
+</v-container>
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
 
 export default {
   name: 'Home',
   components: {
-    Header,
   },
 };
 </script>
