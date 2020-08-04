@@ -10,7 +10,6 @@
       <v-row justify="center">
         <v-col cols="12" md="8">
           <router-view></router-view>
-          
         </v-col>
       </v-row>
   </v-main>
@@ -20,8 +19,8 @@
 
 <script>
 import Footer from './components/Footer.vue';
-import Navbar from './components/Navbar.vue';
 import Navigation from './components/Navigation.vue';
+import Navbar from './components/Navbar.vue';
 
 export default {
   name: 'App',
