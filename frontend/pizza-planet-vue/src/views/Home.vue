@@ -28,6 +28,7 @@
         v-bind:user="pedido.user"
         v-bind:date="pedido.date"
         v-bind:pizza="pedido.pizza"
+        v-bind:price="pedido.price"
         v-bind:size="pedido.size"
         v-bind:ingredientes="pedido.ingredientes"
       >
@@ -51,6 +52,7 @@ export default {
         id: '1',
         user: 'Pepito',
         date: '04/08/2020',
+        price: 20,
         pizza: 'Margarita',
         size: 'mediana',
         ingredientes: 'Queso, Salsa de Tomate',
@@ -59,6 +61,7 @@ export default {
         id: '2',
         user: 'Jaimito',
         date: '04/07/2020',
+        price: 25,
         pizza: 'Margarita',
         size: 'pequena',
         ingredientes: 'Queso, Salsa de Tomate, Tocineta',
@@ -67,6 +70,7 @@ export default {
         id: '3',
         user: 'Pedro',
         date: '04/08/2020',
+        price: 30,
         pizza: 'Margarita',
         size: 'mediana',
         ingredientes: 'Queso, Salsa de Tomate, Tocineta, Maiz, Aceituna',
@@ -75,6 +79,7 @@ export default {
         id: '4',
         user: 'Thomas',
         date: '04/07/2020',
+        price: 28,
         pizza: 'Margarita',
         size: 'grande',
         ingredientes: 'Queso, Salsa de Tomate, Maiz, Aceituna',

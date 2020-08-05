@@ -6,6 +6,7 @@
         <v-card-text>
           <h3>User: {{user}}</h3>
           <h3>Fecha: {{date}}</h3>
+          <h4>Price: {{price}}</h4>
           <p> Pizza: {{pizza}}</p>
           <p> Size: {{size}}</p>
           <p> Ingredientes: {{ingredientes}}</p>
@@ -19,6 +20,7 @@ export default {
   props: {
     user: String,
     date: String,
+    price: Number,
     pizza: String,
     size: String,
     ingredientes: String,
