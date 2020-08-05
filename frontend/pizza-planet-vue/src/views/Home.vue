@@ -1,11 +1,34 @@
 <template>
 <v-container>
   <v-row>
-    <v-col md6 v-for="pedido in listaPedidos" v-bind:key="pedido.id">
+      <v-col>
+        <v-btn small m8 flat color="grey" @click="sortBy('user')">
+          <span class="caption text-lowercase">By User name</span>
+        </v-btn>
+      </v-col>
+      <v-col>
+        <v-btn small m8 flat color="grey" @click="sortBy('size')">
+          <span class="caption text-lowercase">By Pizza size</span>
+        </v-btn>
+      </v-col>
+      <v-col>
+        <v-btn small m8 flat color="grey" @click="sortBy('date')">
+          <span class="caption text-lowercase">By Date</span>
+        </v-btn>
+      </v-col>
+      <v-col>
+        <v-btn small m8 flat color="grey" @click="sortBy('ingredientes')">
+          <span class="caption text-lowercase">By ingredientes</span>
+        </v-btn>
+      </v-col>
+  </v-row>
+  <v-row v-for="pedido in listaPedidos" v-bind:key="pedido.id" wrap>
+    <v-col md6>
       <PedidoCard
         v-bind:user="pedido.user"
         v-bind:date="pedido.date"
         v-bind:pizza="pedido.pizza"
+        v-bind:size="pedido.size"
         v-bind:ingredientes="pedido.ingredientes"
       >
       </PedidoCard>
@@ -29,6 +52,7 @@ export default {
         user: 'Pepito',
         date: '04/08/2020',
         pizza: 'Margarita',
+        size: 'mediana',
         ingredientes: 'Queso, Salsa de Tomate',
       },
       {
@@ -36,9 +60,31 @@ export default {
         user: 'Jaimito',
         date: '04/07/2020',
         pizza: 'Margarita',
+        size: 'pequena',
         ingredientes: 'Queso, Salsa de Tomate, Tocineta',
+      },
+      {
+        id: '3',
+        user: 'Pedro',
+        date: '04/08/2020',
+        pizza: 'Margarita',
+        size: 'mediana',
+        ingredientes: 'Queso, Salsa de Tomate, Tocineta, Maiz, Aceituna',
+      },
+      {
+        id: '4',
+        user: 'Thomas',
+        date: '04/07/2020',
+        pizza: 'Margarita',
+        size: 'grande',
+        ingredientes: 'Queso, Salsa de Tomate, Maiz, Aceituna',
       },
     ],
   }),
+  methods: {
+    sortBy(prop) {
+      this.listaPedidos.sort((prev, current) => (prev[prop] < current[prop] ? 1 : -1));
+    },
+  },
 };
 </script>

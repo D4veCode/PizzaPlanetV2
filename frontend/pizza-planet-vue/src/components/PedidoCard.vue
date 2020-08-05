@@ -7,6 +7,7 @@
           <h3>User: {{user}}</h3>
           <h3>Fecha: {{date}}</h3>
           <p> Pizza: {{pizza}}</p>
+          <p> Size: {{size}}</p>
           <p> Ingredientes: {{ingredientes}}</p>
         </v-card-text>
       </v-card>
@@ -19,6 +20,7 @@ export default {
     user: String,
     date: String,
     pizza: String,
+    size: String,
     ingredientes: String,
   },
 };
