@@ -34,3 +34,10 @@ class Ingrediente(models.Model):
 
     def __str__(self):
         return self.name+' '+self.tamano
+
+class Pizza(models.Model):
+    fk_ingrediente = models.IntegerField()
+    fk_base = models.IntegerField()
+
+    def __str__(self):
+        return str(self.fk_base)+' '+str(self.tamano)
