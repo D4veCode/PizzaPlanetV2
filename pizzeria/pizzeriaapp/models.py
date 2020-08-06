@@ -40,7 +40,7 @@ class Pizza(models.Model):
     fk_base = models.IntegerField()
 
     def __str__(self):
-        return str(self.fk_base)+' '+str(self.fk_ingrediente)
+        return str(self.id)+' '+str(self.fk_base)+' '+str(self.fk_ingrediente)
 
 class Combo(models.Model):
     dia = models.CharField(max_length=15)
