@@ -4,22 +4,12 @@
       <v-card ref='form'>
         <v-card-title>¡Bienvenido! Por favor elija su(s) pizza(s)</v-card-title>
         <v-card-text>
-          <v-text-field
-            label='Name'
-            placeholder='Nombre'
-            v-model='nombre'
-            solo
-          ></v-text-field>
-          <v-select
-            :items='pizzas'
-            v-model='pizza'
-            solo
-            label='Tamaño de Pizza'
-          ></v-select>
+          <v-text-field label='Name' placeholder='Nombre' v-model='nombre' solo></v-text-field>
+          <v-select :items='pizzas' v-model='pizza' solo label='Tamaño de Pizza'></v-select>
           <v-select
             v-model='ingredientsTotal'
             :items='ingredients'
-            item-text="ing"
+            item-text='ing'
             chips
             label='Ingredientes'
             multiple
@@ -27,13 +17,8 @@
             hint='Elije cualquier ingrediente'
             persistent-hint
           ></v-select>
-          <v-slider
-            v-model='cantPizzas'
-            thumb-label
-            label='Cantidad de Pizzas'
-            min='1'
-            max='20'
-          >
+          <v-slider v-model='cantPizzas' thumb-label label='Cantidad de Pizzas'
+          min='1' max='20'>
           </v-slider>
         </v-card-text>
         <v-divider class='mt-12'></v-divider>
@@ -42,44 +27,70 @@
             <h1>Su orden</h1>
           </v-row>
           <v-row>
-            <v-col md6><b>Tamaño Pizza(s)</b></v-col>
-            <v-col md6><b>Precio Base de Pizza</b></v-col>
+            <v-col md6>
+              <b>Tamaño Pizza(s)</b>
+            </v-col>
+            <v-col md6>
+              <b>Precio Base de Pizza</b>
+            </v-col>
           </v-row>
           <v-row>
             <v-col md6>{{ pizza }}</v-col>
             <v-col md6>$ {{ precioPizzaSola() }}</v-col>
           </v-row>
           <v-row v-show='ingredientsTotal.length != 0'>
-            <v-col md6><b>Ingrediente(s)</b></v-col>
-            <v-col md6><b>Precio</b></v-col>
+            <v-col md6>
+              <b>Ingrediente(s)</b>
+            </v-col>
+            <v-col md6>
+              <b>Precio</b>
+            </v-col>
           </v-row>
           <v-row v-for='ing in ingredientsTotal' :key='ing'>
             <v-col md6>{{ ing }}</v-col>
             <v-col md6>{{ingredientPrice(ing)}}</v-col>
           </v-row>
           <v-row v-show='nombre && pizza'>
-            <v-col md4><h2>Cliente</h2></v-col>
-            <v-col md4><h2>Cantidad de Pizzas</h2> </v-col>
-            <v-col md4><h2>Total</h2></v-col>
+            <v-col md4>
+              <h2>Cliente</h2>
+            </v-col>
+            <v-col md4>
+              <h2>Cantidad de Pizzas</h2>
+            </v-col>
+            <v-col md4>
+              <h2>Total</h2>
+            </v-col>
           </v-row>
           <v-row v-show='nombre && pizza'>
-            <v-col md4><h3>{{nombre}}</h3></v-col>
-            <v-col md4><h3>{{cantPizzas}}</h3></v-col>
-            <v-col md4><h3>$ {{sumTotal()}}</h3></v-col>
+            <v-col md4>
+              <h3>{{nombre}}</h3>
+            </v-col>
+            <v-col md4>
+              <h3>{{cantPizzas}}</h3>
+            </v-col>
+            <v-col md4>
+              <h3>$ {{sumTotal()}}</h3>
+            </v-col>
           </v-row>
         </v-card-text>
         <v-divider class='mt-12'></v-divider>
         <v-card-actions>
-          <v-row justify='end'
-            ><v-btn color='primary' text @click='submit'>Submit</v-btn></v-row
-          >
+          <v-row justify='end'>
+            <v-btn color='primary' text @click='submit'>Submit</v-btn>
+          </v-row>
         </v-card-actions>
+        <v-card-text v-if='message'>
+          <v-alert v-if='success' dense text type='success'>{{message}}</v-alert>
+          <v-alert v-else dense text type='error'>{{message}}</v-alert>
+        </v-card-text>
       </v-card>
     </v-col>
   </v-row>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'PedidoForm',
   data: () => ({
@@ -124,9 +135,30 @@ export default {
     ingredientsTotal: [],
     cantPizzas: 1,
     nombre: '',
+    success: false,
+    message: '',
   }),
   methods: {
-    submit() {},
+    submit() {
+      axios
+        .post('http://localhost:8000/pedidos/', {
+          user: this.nombre,
+          price: this.sumTotal(),
+          pizza: 'Margarita',
+          size: this.pizza,
+          ingredientes: this.ingredientsTotal.toString(),
+        })
+        .then((data) => {
+          console.log(data);
+          this.message = 'Pedido registrado con exito';
+          this.success = true;
+        })
+        .catch((error) => {
+          this.message = (error.response && error.response.data.message)
+            || error.message || error.toString();
+          this.success = false;
+        });
+    },
     precioPizzaSola() {
       let precioSola;
       if (this.pizza.toLowerCase() === 'personal') {
