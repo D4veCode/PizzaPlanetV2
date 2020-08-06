@@ -7,6 +7,11 @@
         </v-btn>
       </v-col>
       <v-col>
+        <v-btn small m8 color="grey" @click="sortBy('price')">
+          <span class="caption text-lowercase">By price</span>
+        </v-btn>
+      </v-col>
+      <v-col>
         <v-btn small m8 color="grey" @click="sortBy('size')">
           <span class="caption text-lowercase">By Pizza size</span>
         </v-btn>
