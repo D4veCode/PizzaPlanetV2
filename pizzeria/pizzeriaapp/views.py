@@ -12,7 +12,7 @@ class Reporte1ViewSet(viewsets.ModelViewSet):
     serializer_class = PedidoSerializer
 
 class Reporte2ViewSet(viewsets.ModelViewSet):
-    queryset = Pedido.objects.filter(date='2020-08-06')
+    queryset = Pedido.objects.all().order_by('date')
     serializer_class = PedidoSerializer
 
 class Reporte3iewSet(viewsets.ModelViewSet):
