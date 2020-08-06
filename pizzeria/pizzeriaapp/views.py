@@ -21,6 +21,10 @@ class Reporte3iewSet(viewsets.ModelViewSet):
     queryset = Pedido.objects.all().order_by('size')
     serializer_class = PedidoSerializer
 
+class Reporte4iewSet(viewsets.ModelViewSet):
+    queryset = Pedido.objects.all().order_by('ingredientes')
+    serializer_class = PedidoSerializer
+
 class Reporte5ViewSet(viewsets.ModelViewSet):
     queryset = Pedido.objects.all().order_by('user')
     serializer_class = PedidoSerializer
