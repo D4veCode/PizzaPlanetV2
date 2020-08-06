@@ -9,6 +9,7 @@
           <h4>Price: {{price}}</h4>
           <p> Pizza: {{pizza}}</p>
           <p> Size: {{size}}</p>
+          <p>Cantidad: {{cant}}</p>
           <p> Ingredientes: {{ingredientes}}</p>
         </v-card-text>
       </v-card>
@@ -24,6 +25,7 @@ export default {
     pizza: String,
     size: String,
     ingredientes: String,
+    cant: Number,
   },
 };
 </script>

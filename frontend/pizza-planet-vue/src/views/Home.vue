@@ -36,6 +36,7 @@
         v-bind:price="pedido.price"
         v-bind:size="pedido.size"
         v-bind:ingredientes="pedido.ingredientes"
+        v-bind:cant="pedido.cant"
       >
       </PedidoCard>
     </v-col>
