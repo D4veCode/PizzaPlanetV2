@@ -5,6 +5,7 @@ from . import views
 router = routers.DefaultRouter()
 router.register(r'pedidos', views.PedidoViewSet)
 router.register(r'reporte1', views.Reporte1ViewSet)
+router.register(r'reporte2', views.Reporte2ViewSet)
 router.register(r'reporte5', views.Reporte5ViewSet)
 
 
