@@ -2,6 +2,7 @@ from django.urls import include, path
 from rest_framework import routers
 from . import views
 
+#Aquí abajo se agregan las rutas del backend con su respectivo viewSet
 router = routers.DefaultRouter()
 router.register(r'pedidos', views.PedidoViewSet)
 router.register(r'reporte1', views.Reporte1ViewSet)
