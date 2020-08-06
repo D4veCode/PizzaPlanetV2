@@ -10,3 +10,12 @@ class Pedido(models.Model):
 
     def __str__(self):
         return str(self.id)+' '+self.user+' '+str(self.date)
+
+class Cliente(models.Model):
+    name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    cedula = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name+' '+self.lastname
+    
