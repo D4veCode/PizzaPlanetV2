@@ -18,4 +18,11 @@ class Cliente(models.Model):
 
     def __str__(self):
         return self.name+' '+self.lastname
-    
+
+class Base(models.Model):
+    fk_pedido = models.IntegerField()
+    tamano = models.CharField(max_length=50)
+    price = models.DecimalField(max_digits=4, decimal_places=2)
+
+    def __str__(self):
+        return self.tamano
