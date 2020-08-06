@@ -17,7 +17,7 @@ class Cliente(models.Model):
     cedula = models.CharField(max_length=20)
 
     def __str__(self):
-        return self.name+' '+self.lastname
+        return str(self.id)+' '+self.name+' '+self.lastname
 
 class Base(models.Model):
     fk_pedido = models.IntegerField()
@@ -25,7 +25,7 @@ class Base(models.Model):
     price = models.DecimalField(max_digits=4, decimal_places=2)
 
     def __str__(self):
-        return self.tamano
+        return str(self.id)+' '+self.tamano
 
 class Ingrediente(models.Model):
     name = models.CharField(max_length=50)
@@ -33,7 +33,7 @@ class Ingrediente(models.Model):
     price = models.DecimalField(max_digits=4, decimal_places=2)
 
     def __str__(self):
-        return self.name+' '+self.tamano
+        return str(self.id)+' '+self.name+' '+self.tamano
 
 class Pizza(models.Model):
     fk_ingrediente = models.IntegerField()
@@ -50,4 +50,4 @@ class Combo(models.Model):
     descuento = models.IntegerField()
 
     def __str__(self):
-        return self.dia+' '+self.tamano+''+str(self.descuento)
+        return str(self.id)+' '+self.dia+' '+self.tamano+''+str(self.descuento)
