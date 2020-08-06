@@ -24,6 +24,7 @@ class Reporte3ViewSet(viewsets.ModelViewSet):
     serializer_class = PedidoSerializer
 
 class Reporte4ViewSet(viewsets.ModelViewSet):
+    """Se ordena la lista de acuerdo a los ingredientes"""
     queryset = Pedido.objects.all().order_by('ingredientes')
     serializer_class = PedidoSerializer
 
