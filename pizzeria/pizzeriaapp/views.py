@@ -12,6 +12,7 @@ class Reporte1ViewSet(viewsets.ModelViewSet):
     serializer_class = PedidoSerializer
 
 class Reporte2ViewSet(viewsets.ModelViewSet):
+    """Se ordena la lista de acuerdo a la fecha del pedido"""
     queryset = Pedido.objects.all().order_by('date')
     serializer_class = PedidoSerializer
 
