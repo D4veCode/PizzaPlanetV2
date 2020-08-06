@@ -104,7 +104,7 @@ export default {
 
       {
         price: 3.5,
-        ing: 'Champinones',
+        ing: 'Champiñones',
       },
 
       {
@@ -175,7 +175,7 @@ export default {
     ingredientPrice(ing) {
       const ingredientsPrices = {
         jamon: 4,
-        champinones: 3.5,
+        champiñones: 3.5,
         pimenton: 3,
         'doble queso': 4,
         aceitunas: 5.75,
