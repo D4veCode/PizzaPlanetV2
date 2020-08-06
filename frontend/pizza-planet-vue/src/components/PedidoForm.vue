@@ -42,16 +42,16 @@
             <h1>Su orden</h1>
           </v-row>
           <v-row>
-            <v-col md6>Tamaño Pizza(s)</v-col>
-            <v-col md6>Precio Base de Pizza</v-col>
+            <v-col md6><b>Tamaño Pizza(s)</b></v-col>
+            <v-col md6><b>Precio Base de Pizza</b></v-col>
           </v-row>
           <v-row>
             <v-col md6>{{ pizza }}</v-col>
             <v-col md6>$ {{ precioPizzaSola() }}</v-col>
           </v-row>
           <v-row v-show='ingredientsTotal.length != 0'>
-            <v-col md6>Ingrediente(s)</v-col>
-            <v-col md6>Precio</v-col>
+            <v-col md6><b>Ingrediente(s)</b></v-col>
+            <v-col md6><b>Precio</b></v-col>
           </v-row>
           <v-row v-for='ing in ingredientsTotal' :key='ing'>
             <v-col md6>{{ ing }}</v-col>
@@ -65,7 +65,7 @@
           <v-row v-show='nombre && pizza'>
             <v-col md4><h3>{{nombre}}</h3></v-col>
             <v-col md4><h3>{{cantPizzas}}</h3></v-col>
-            <v-col md4><h3>{{sumTotal()}}</h3></v-col>
+            <v-col md4><h3>$ {{sumTotal()}}</h3></v-col>
           </v-row>
         </v-card-text>
         <v-divider class='mt-12'></v-divider>
