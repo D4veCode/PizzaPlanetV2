@@ -35,6 +35,7 @@
         v-bind:pizza="pedido.pizza"
         v-bind:price="pedido.price"
         v-bind:size="pedido.size"
+        v-bind:cant="pedido.cant"
         v-bind:ingredientes="pedido.ingredientes"
       >
       </PedidoCard>
