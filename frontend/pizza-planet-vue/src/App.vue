@@ -52,7 +52,6 @@
                   icon
                   large
                   target="_blank"
-                  v-on="on"
                 >
                   <v-icon large>mdi-code-tags</v-icon>
                 </v-btn>
