@@ -16,12 +16,12 @@ class Reporte2ViewSet(viewsets.ModelViewSet):
     queryset = Pedido.objects.all().order_by('date')
     serializer_class = PedidoSerializer
 
-class Reporte3iewSet(viewsets.ModelViewSet):
+class Reporte3ViewSet(viewsets.ModelViewSet):
     """Se ordena la lista de acuerdo al tamaño de la Pizza"""
     queryset = Pedido.objects.all().order_by('size')
     serializer_class = PedidoSerializer
 
-class Reporte4iewSet(viewsets.ModelViewSet):
+class Reporte4ViewSet(viewsets.ModelViewSet):
     queryset = Pedido.objects.all().order_by('ingredientes')
     serializer_class = PedidoSerializer
 
