@@ -44,6 +44,15 @@
             "pizza": "Margarita",
             "size": "grande",
             "ingredientes": "Queso, Salsa de Tomate, Maiz, Aceituna, Salchichon"
+        },
+        {
+            "id": 6,
+            "user": "Jose",
+            "date": "04/08/2020",
+            "price": 23,
+            "pizza": "Margarita",
+            "size": "mediana",
+            "ingredientes": "Queso, Salsa de Tomate, Pepperoni"
         }
     ]
 }
