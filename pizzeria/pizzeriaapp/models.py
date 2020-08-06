@@ -7,6 +7,7 @@ class Pedido(models.Model):
     pizza = models.CharField(max_length=50)
     size = models.CharField(max_length=20)
     ingredientes = models.CharField(max_length = 200)
+    cant = models.IntegerField()
 
     def __str__(self):
         return str(self.id)+' '+self.user+' '+str(self.date)
