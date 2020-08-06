@@ -10,6 +10,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "Home" */ '../views/Home.vue'),
   },
   {
+    path: '/pedido',
+    name: 'Pedido',
+    component: () => import('../views/Pedido.vue'),
+  },
+  {
     path: '*',
     redirect: { name: 'Home' },
   },

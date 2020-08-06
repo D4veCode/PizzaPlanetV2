@@ -22,7 +22,9 @@
             <v-icon>mdi-email</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Pedido</v-list-item-title>
+            <v-list-item-title>
+              <router-link to="/pedido" class="rlink">Pedido</router-link>
+            </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -81,3 +83,10 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+  .rlink {
+    text-decoration: none;
+    color: #ffffff;
+  }
+</style>
