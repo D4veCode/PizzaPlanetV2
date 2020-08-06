@@ -9,4 +9,4 @@ class Pedido(models.Model):
     ingredientes = models.CharField(max_length = 200)
 
     def __str__(self):
-        return self.date
+        return self.user + str(self.id)
