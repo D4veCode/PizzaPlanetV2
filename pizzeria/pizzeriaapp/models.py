@@ -40,4 +40,14 @@ class Pizza(models.Model):
     fk_base = models.IntegerField()
 
     def __str__(self):
-        return str(self.fk_base)+' '+str(self.tamano)
+        return str(self.fk_base)+' '+str(self.fk_ingrediente)
+
+class Combo(models.Model):
+    dia = models.CharField(max_length=15)
+    fk_ingrediente = models.IntegerField()
+    tamano = models.CharField(max_length=15)
+    precio_base = models.DecimalField(max_digits=4, decimal_places=2)
+    descuento = models.IntegerField()
+
+    def __str__(self):
+        return self.dia+' '+self.tamano+''+str(self.descuento)
