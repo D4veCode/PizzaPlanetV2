@@ -4,11 +4,13 @@ from .serializers import PedidoSerializer
 from .models import Pedido
 
 class PedidoViewSet(viewsets.ModelViewSet):
+    """Se devuelven todos los pedidos"""
     queryset = Pedido.objects.all().order_by('date')
     serializer_class = PedidoSerializer
 
 class Reporte1ViewSet(viewsets.ModelViewSet):
-    queryset = Pedido.objects.filter(date='2020-08-06')
+    """Se devuelven todos los pedidos"""
+    queryset = Pedido.objects.all()
     serializer_class = PedidoSerializer
 
 class Reporte2ViewSet(viewsets.ModelViewSet):
