@@ -147,6 +147,7 @@ export default {
           pizza: 'Margarita',
           size: this.pizza,
           ingredientes: this.ingredientsTotal.toString(),
+          cant: this.cantPizzas,
         })
         .then((data) => {
           console.log(data);
