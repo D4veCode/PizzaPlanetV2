@@ -29,5 +29,6 @@ class Reporte4ViewSet(viewsets.ModelViewSet):
     serializer_class = PedidoSerializer
 
 class Reporte5ViewSet(viewsets.ModelViewSet):
+    """Se ordena la lista de acuerdo a el nombre del usuario"""
     queryset = Pedido.objects.all().order_by('user')
     serializer_class = PedidoSerializer
