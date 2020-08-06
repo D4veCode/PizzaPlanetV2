@@ -57,7 +57,7 @@ export default {
   },
   mounted() {
     const vue = this;
-    axios.get('https://jsonplaceholder.typicode.com/todos').then((response) => {
+    axios.get('http://127.0.0.1:8000/pedidos/').then((response) => {
       vue.listaPedidos = response.data;
       console.log(response.data);
     }).catch((error) => console.log(error));

@@ -1,4 +1,6 @@
 pizzaplanetv2/
 backendEnv/
 .vscode/
+
+
 *.pyc
